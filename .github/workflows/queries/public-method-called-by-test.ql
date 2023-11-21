@@ -43,6 +43,6 @@ predicate calls(Function caller, Function callee) {
 }
 
 from Function test, Function callee
-where isTest(test) and isPublicMethod(callee) and isExportedFunction(callee)
+where isTest(test) and isPublicMethod(callee) and isExportedFunction(callee) and
       calls(test, callee)
 select callee, "is a public method directly called by a test"
