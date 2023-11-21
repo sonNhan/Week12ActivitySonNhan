@@ -7,17 +7,17 @@
 import javascript
 
 /**
- * Holds a method is public
- */
-predicate isPublicMethod(Function method) {
-    exists(MethodDefinition md | md.isPublic() && md.getBody() = method)
+* Holds if the given function is a public method of a class.
+*/
+predicate isPublicMethod(Function f) {
+    exists(MethodDefinition md | md.isPublic() and md.getBody() = f)
 }
 
 /**
 * Holds if the given function is exported from a module.
 */
 predicate isExportedFunction(Function f) {
-    exists(Module m | m.getAnExportedValue(_).getAFunctionValue().getFunction() =f) and not f.inExternsFile()
+    exists(Module m | m.getAnExportedValue(_).getAFunctionValue().getFunction() = f) and not f.inExternsFile()
 }
 
 predicate isTest(Function test) {
