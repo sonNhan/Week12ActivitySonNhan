@@ -1,7 +1,7 @@
 /**
  * @description Find functions that are over 10 lines of code
  * @kind problem
- * @id javascript/functions-directly-called-by-tests
+ * @id javascript/functions-over-ten-loc
  * @problem.severity recommendation
  */
 import javascript
@@ -10,7 +10,7 @@ import javascript
  * Holds if a function is a test.
  */
 predicate isOverTenLOC(Function func) {
-    func.getNumLines() = 10
+    func.getNumLines() > 10
 }
 
 from Function function
