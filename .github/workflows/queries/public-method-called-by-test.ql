@@ -17,7 +17,7 @@ predicate isPublicMethod(Function f) {
 * Holds if the given function is exported from a module.
 */
 predicate isExportedFunction(Function f) {
-    exists(Module m | m.getAnExportedValue(_).getAFunctionValue().getFunction() =f) andnot f.inExternsFile()
+    exists(Module m | m.getAnExportedValue(_).getAFunctionValue().getFunction() =f) and not f.inExternsFile()
 }
 
 /**
