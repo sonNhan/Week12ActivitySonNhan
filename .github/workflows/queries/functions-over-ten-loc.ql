@@ -15,4 +15,4 @@ predicate isOverTenLOC(Function func) {
 
 from Function function
 where isOverTenLOC(function)
-select function + " is over 10 lines of code"
+select function, " is over 10 lines of code"
