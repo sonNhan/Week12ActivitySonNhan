@@ -10,7 +10,7 @@ import javascript
  * Holds if a function is a test.
  */
 predicate isOverTenLOC(Function func) {
-    exists(getNumLines(func) = 10)
+    exists(func.getNumLines() = 10)
 }
 
 from Function function
